@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>koa-passport example</title>
+    <style>
+    *,
+    *::after,
+    *::before {
+        box-sizing: border-box;
+    }
+    
+    body {
+        text-align: center;
+        font-family: times, Times New Roman, times-roman, georgia, serif;
+        font-size: 100%;
+        background-color: #dddddd;
+    }
+    
+    a {
+        display: block;
+        text-decoration: none;
+        -webkit-appearance: button;
+        width: 50%;
+        margin: auto;
+    }
+    
+    label {
+        display: block;
+    }
+   
+    .login-panel {
+        position: relative;
+        margin: 20% auto;
+        width: 400px;
+        text-align: center;
+        line-height: 40px;
+        background-color: #f8f8ff;
+    }
+    
+    .login-form {
+        padding-bottom: 10%;
+        padding-top: 10%;
+        font-weight: bold;
+        border-radius: 4px;
+        box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
+        border: none;
+    }
+    
+    .login-sharelink {
+        border-radius: 15px;
+    }
+    
+    .login-btn {
+        background: #ff4081;
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        color: #fff;
+        font-size: 32px;
+        border: none;
+        position: absolute;
+        transition: 0.3s;
+        box-shadow: 1px 0px 0px rgba(0, 0, 0, 0.3) inset;
+        margin: auto;
+        right: -30px;
+        bottom: 90px;
+        cursor: pointer;
+        -webkit-appearance: button;
+    }
+    
+    .login-btn:hover {
+        box-shadow: 0 0 0 rgba(0, 0, 0, 0.3) inset, 0 3px 6px rgba(0, 0, 0, 0.16), 0 5px 11px rgba(0, 0, 0, 0.23);
+    }
+    
+    .login-btn:hover .icon-arrow {
+        -ms-transform: rotate(45deg) scale(1.2);
+        -webkit-transform: rotate(45deg) scale(1.2);
+        transform: rotate(45deg) scale(1.2);
+    }
+    
+    .login-btn:focus,
+    .login-btn:active {
+        outline: none;
+    }
+    
+    .icon-arrow {
+        position: relative;
+        width: 13px;
+        height: 13px;
+        border-right: 3px solid #fff;
+        border-top: 3px solid #fff;
+        display: block;
+        -ms-transform: rotate(45deg);
+        -webkit-transform: rotate(45deg);
+        transform: rotate(45deg);
+        margin: auto;
+        -webkit-transition: 0.3s;
+        transition: 0.3s;
+    }
+    
+    .icon-arrow:after {
+        content: '';
+        position: absolute;
+        width: 18px;
+        height: 3px;
+        background: #fff;
+        left: -5px;
+        top: 5px;
+        -ms-transform: rotate(-45deg);
+        -webkit-transform: rotate(-45deg);
+        transform: rotate(-45deg);
+    }
+    
+    .login-control {
+        border: none;
+        font-size: 15px;
+        text-align: center;
+        color: #666;
+        height: 32px;
+        text-shadow: 2px;
+        font-family: sans-serif;
+    </style>
+</head>
+
+<body>
+    <div class="login-panel">
+        <form action="/login" method="post" class="login-form">
+            <label>Username:</label>
+            <input type="text" name="username" value="test" class="login-control" />
+            <label>Password:</label>
+            <input type="password" name="password" value="test" class="login-control" />
+            <button class="login-btn"><i class="icon-arrow"></i></button>
+            <p></p>
+            <a href="/auth/facebook" class="login-sharelink">Sign in with <span style="color:#0000CD;font-weight: bolder;">Facebook</span></a>
+            <p></p>
+            <a href="/auth/twitter" class="login-sharelink">Sign in with <span  style="color:#00FFFF;font-weight: bolder;">Twtter</span></a>
+            <p></p>
+            <a href="/auth/google" class="login-sharelink">Sign in with <span  style="color:#FF0000;font-weight: bolder;">Google</span></a>
+        </form>
+    </div>
+</body>
+
+</html>
